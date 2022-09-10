@@ -2,12 +2,84 @@
 
 CognitiveCTFを解いたときの記録を徒然していこうかなと思いました。
 
+## The Numbers
+
+### 問題
+> 数字は...何の意味があるの？
+
+### アプローチ
+
+数字のリンクをクリックするとPNGファイルがダウンロードされた。
+
+内容は`3 15 7 14 9 20 9 22 5 3 20 6 {20 8 5 14 21 13 2 5 18 19 13 1 19 15 14 3 15 4}`だった。
+
+`{}`があるからフラグだとすぐわかる。
+またこの問題のフラグ形式が`CognitiveCTG{FLAG}`なので、`3 ... 3 ... {...}`のCで一致している。
+
+`3 15 7 14 9 20 9 22 5 3 20 6 {20 8 5 14 21 13 2 5 18 19 13 1 19 15 14 3 15 4}`
+
+`3`が`C`ならば、`1`が`A`である。
+
+簡単なプログラムを作る。
+
+```python
+import sys
+
+av = sys.argv[1]
+print(av)
+obj = av.split(" ")
+tmp = []
+
+for i in obj:
+    n = int(i.replace("{","").replace("}",""))
+    n += 64
+    print(n, chr(n))
+    tmp.append(chr(n))
+
+for w in tmp:
+    print(w, end="")
+print()
+```
+
+これの出力が`COGNITIVECTFTHENUMBERSMASONCOD`になった。`{}`を補って比較するとこんな感じ。
+> `COGNITIVECTF{THENUMBERSMASONCOD}`<br>
+> `CognitiveCTG{FLAG}`<br>
+
+ちょっとフォーマット違うけど、入力したらあってた。
+
+## practice-run-1（2022年9月11日）
+
+### 問題
+> ここから先へ進むには、プログラムをどうやって動かすかを知っておく必要があります。フラグを得るには、Shellサーバー上で/problems/practice-run-1_0_e898984dec5059fd94fd863587109ed6へ移動し、このプログラムを実行してください。
+
+### アプローチ
+
+まずは「このプログラム」をダウンロードする。
+`run_this`というファイル名だとわかって、ディレクトリを移動して同じファイル名を発見したので実行。
+
+```shell
+AyatoShitomi@picoCTF_production_shell_001:~$ curl -OL https://shell1.production.cognitivectf.com/static/0d6d958d91c106e52d5bbe2f0e835b06/run_this
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  646k  100  646k    0     0  3893k      0 --:--:-- --:--:-- --:--:-- 3893k
+AyatoShitomi@picoCTF_production_shell_001:~$ ls
+run_this
+AyatoShitomi@picoCTF_production_shell_001:~$ cd /problems/practice-run-1_0_e898984dec5059fd94fd863587109ed6
+AyatoShitomi@picoCTF_production_shell_001:/problems/practice-run-1_0_e898984dec5059fd94fd863587109ed6$ ls
+run_this
+AyatoShitomi@picoCTF_production_shell_001:/problems/practice-run-1_0_e898984dec5059fd94fd863587109ed6$ ./run_this 
+CognitiveCTF{g3t_r3adY_2_r3v3r53!!!!}
+AyatoShitomi@picoCTF_production_shell_001:/problems/practice-run-1_0_e898984dec5059fd94fd863587109ed6$ 
+```
+
+`ognitiveCTF{g3t_r3adY_2_r3v3r53!!!!}`であってたのでOK
+
 ## 13（2022年9月11日）
 
 ### 問題
 > 暗号は時として簡単に解けることもあります。ROT13をご存知ですか？`PbtavgvirPGS{abg_gbb_onq_bs_n_ceboyrz_7qsn03oq}`
 
-### 考え方
+### アプローチ
 
 `rot13`について調べたらシーザー暗号の一つで文字を13個後ろに入れ替えてるだけ。
 変換サイトがあるので、これに入れればいい
@@ -85,7 +157,7 @@ int main(int argc, char **argv){
 ### 問題の概要
 > 121(10進法)を2進数に変換する
 
-### 考え方１
+### アプローチ１
 
 コマンドラインで進数変換できたはず。
 
@@ -108,7 +180,7 @@ AyatoShitomi@picoCTF_production_shell_001:~$
 
 よって`1111001`がフラグの中身
 
-### 考え方２
+### アプローチ２
 
 進数変換は上から順に変換する数で割っていけばいい。
 
