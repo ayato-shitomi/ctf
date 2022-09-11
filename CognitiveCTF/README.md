@@ -341,6 +341,19 @@ int main(int argc, char **argv){
 
 わからなかったから放置
 
+分かった。
+
+```shell
+AyatoShitomi@picoCTF_production_shell_001:~$ cd /problems/handy-shellcode_3_eefb645e8107c9aa00c62fb91b755de8
+AyatoShitomi@picoCTF_production_shell_001:/problems/handy-shellcode_3_eefb645e8107c9aa00c62fb91b755de8$ ls
+flag.txt  vuln  vuln.c
+```
+
+ここに格納されていた。この`flag.txt`を読めばいい。
+
+ここでまた手が詰まった。
+
+
 ## 2Warm（2022年9月11日）
 
 ### 問題の概要
