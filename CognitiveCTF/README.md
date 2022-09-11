@@ -3,6 +3,28 @@
 CognitiveCTFを解いたときの記録を徒然していこうかなと思いました。
 フラグ形式`CognitiveCTF{}`で、大文字小文字区別なし。
 
+## So Meta（2022年9月11日）
+
+### 問題
+
+> この画像からフラグを探し出してください。
+このファイルはshell1.production.cognitivectf.comの以下ディレクトリにも置かれています。
+/problems/so-meta_2_1fdd96839249b508f04d47ff5b4d0e6b
+
+### アプローチ
+
+問題名からMetaタグの中にフラグがあると思う。
+
+```shell
+AyatoShitomi@picoCTF_production_shell_001:/problems/so-meta_2_1fdd96839249b508f04d47ff5b4d0e6b$ ls
+pico_img.png
+AyatoShitomi@picoCTF_production_shell_001:/problems/so-meta_2_1fdd96839249b508f04d47ff5b4d0e6b$ strings pico_img.png  | grep CTF
+CognitiveCTF{s0_m3ta_846c1cfa}
+```
+
+`CognitiveCTF{s0_m3ta_846c1cfa}`を検証する
+
+
 ## Bases（2022年9月11日）
 
 ### 問題
