@@ -2,7 +2,35 @@
 
 CognitiveCTFを解いたときの記録を徒然していこうかなと思いました。
 
+## what's a net cat?（2022年9月11日）
 
+### 問題
+
+> netcat (nc) を使うことはかなり重要になってきます。
+shell1.production.cognitivectf.comのポート番号15580に接続してフラグを獲得できますか？
+
+### アプローチ
+
+ncコマンドについて調べる
+
+```shell
+AyatoShitomi@picoCTF_production_shell_001:~$ nc
+usage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]
+          [-m minttl] [-O length] [-P proxy_username] [-p source_port]
+          [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]
+          [-X proxy_protocol] [-x proxy_address[:port]]           [destination] [port]
+AyatoShitomi@picoCTF_production_shell_001:~$ 
+```
+
+`nc shell1.production.cognitivectf.com:15580`でいけるのかな。と思ったら違った。
+
+```shell
+AyatoShitomi@picoCTF_production_shell_001:~$ nc shell1.production.cognitivectf.com 15580
+You're on your way to becoming the net cat master
+CognitiveCTF{nEtCat_Mast3ry_09ed53fe}
+```
+
+`CognitiveCTF{nEtCat_Mast3ry_09ed53fe}`を検証してOK
 
 ## strings it（2022年9月11日）
 
