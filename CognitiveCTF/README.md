@@ -2,6 +2,47 @@
 
 CognitiveCTFを解いたときの記録を徒然していこうかなと思いました。
 
+
+
+## strings it（2022年9月11日）
+
+### 問題
+> 実行せずにこのファイルにあるフラグを見つけることができますか？
+このファイルはshell1.production.cognitivectf.comの以下ディレクトリにも置かれています。
+/problems/strings-it_0_6574bcb359a79eaef28d07f8b6af2877
+
+### アプローチ
+ディレクトリ移動
+
+```
+AyatoShitomi@picoCTF_production_shell_001:~$ cd /problems/strings-it_0_6574bcb359a79eaef28d07f8b6af2877
+AyatoShitomi@picoCTF_production_shell_001:/problems/strings-it_0_6574bcb359a79eaef28d07f8b6af2877$ ls
+strings
+```
+Stringsコマンドでみたら、長すぎたのでさらにGrepする。
+
+```
+AyatoShitomi@picoCTF_production_shell_001:/problems/strings-it_0_6574bcb359a79eaef28d07f8b6af2877$ strings strings  | grep "{"
+CognitiveCTF{5tRIng5_1T_e22f4874}
+```
+
+検証してOK。
+
+## First Grep（2022年9月11日）
+
+### 問題
+> ファイルの中にあるフラグを見つけられますか？手動で調べるのは本当に面倒ですが、どうやらもっと良い方法があるみたいです。このファイルはシェルサーバーの /problems/first-grep_3_76db5c9e677a5a741754b6b4c9b0526a にもあります
+
+### アプローチ
+
+問題名からしてGrepを使えば早い。
+
+```
+AyatoShitomi@picoCTF_production_shell_001:/problems/first-grep_3_76db5c9e677a5a741754b6b4c9b0526a$ grep "{" file 
+CognitiveCTF{grep_is_good_to_find_things_83b1c474}
+```
+検証してみる。OKだった。
+
 ## Insp3ct0r（2022年9月11日）
 
 ### 問題
