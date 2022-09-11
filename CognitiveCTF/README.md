@@ -1,6 +1,7 @@
 # CognitiveCTF
 
 CognitiveCTFを解いたときの記録を徒然していこうかなと思いました。
+フラグ形式`CognitiveCTF{}`で、大文字小文字区別なし。
 
 ## Bases（2022年9月11日）
 
@@ -14,8 +15,13 @@ CognitiveCTFを解いたときの記録を徒然していこうかなと思い�
 
 `base64`コマンドと言うものがある。
 
+```shell
+AyatoShitomi@picoCTF_production_shell_001:~$ echo "bDNhcm5fdGgzX3IwcDM1X2U5YjlkMTgw" > t && base64 -d t && echo
+l3arn_th3_r0p35_e9b9d180
+AyatoShitomi@picoCTF_production_shell_001:~$ 
+```
 
-
+`CignitiveCTF{l3arn_th3_r0p35_e9b9d180}`でOK
 
 ## what's a net cat?（2022年9月11日）
 
