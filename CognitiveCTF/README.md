@@ -3,6 +3,113 @@
 CognitiveCTFを解いたときの記録を徒然していこうかなと思いました。
 フラグ形式`CognitiveCTF{}`で、大文字小文字区別なし。
 
+## Tapping（2022年9月12日）
+
+### 問題
+
+> 信号線から入ってくる何かを盗聴しました。何と言っていますか？ `nc shell1.production.cognitivectf.com 48474`
+
+### アプローチ
+
+そのまま実行したら、出てきた。
+
+```
+AyatoShitomi@picoCTF_production_shell_001:~$ nc shell1.production.cognitivectf.com 48474
+-.-. --- --. -. .. - .. ...- . -.-. - ..-. { -- ----- .-. ... ...-- -.-. ----- -.. ...-- .---- ... ..-. ..- -. ...-- ---.. .---- ..-. -.-. ..-. .---- ----- }
+^C
+```
+
+フラグのフォーマットだとわかった。モールス信号だとわかった。
+
+```bash
+AyatoShitomi@picoCTF_production_shell_001:~$ nc shell1.production.cognitivectf.com 48474 > morusu
+^C
+AyatoShitomi@picoCTF_production_shell_001:~$ cat morusu 
+-.-. --- --. -. .. - .. ...- . -.-. - ..-. { -- ----- .-. ... ...-- -.-. ----- -.. ...-- .---- ... ..-. ..- -. ...-- ---.. .---- ..-. -.-. ..-. .---- ----- }
+```
+
+https://morsedecoder.com/ ここで変換できる。
+
+`COGNITIVECTF#M0RS3C0D31SFUN381FCF10#`が出てきたので、`COGNITIVECTF{M0RS3C0D31SFUN381FCF10}`でOK
+
+## plumbing（2022年9月12日）
+
+### 問題
+
+> ファイルの外で処理データを扱わなければならないときもあります。プログラムの出力を保持したまま、フラグを検索する方法を見つけてください。`shell1.production.cognitivectf.com 48438`に接続してください。
+
+### アプローチ
+
+ヒントを読んだ。
+
+> フラグのフォーマットはCognitiveCTF{XXXX}であることを覚えておいてください。
+パイプとは何ですか？そのようなパイプではありません...この種類の
+
+ncで接続する。
+
+```shell
+AyatoShitomi@picoCTF_production_shell_001:~$ nc shell1.production.cognitivectf.com 48438 | grep CTF
+CognitiveCTF{digital_plumb3r_a0a0c498}
+```
+出てきたので確認したらOK。
+
+## dont-use-client-side（2022年9月12日）
+
+### 問題
+
+> この超セキュアなポータルに侵入できますか？
+https://shell1.production.cognitivectf.com/problem/30590/ (link) or http://shell1.production.cognitivectf.com:30590
+
+### アプローチ
+
+ソースを見たらこんなんだった。
+
+```js
+  function verify() {
+    checkpass = document.getElementById("pass").value;
+    split = 4;
+    if (checkpass.substring(0, split) == 'Cogn') {
+      if (checkpass.substring(split*6, split*7) == 'plz_') {
+        if (checkpass.substring(split*1, split*2) == 'itiv') {
+          if (checkpass.substring(split*4, split*5) == 'clie') {
+            if (checkpass.substring(split*8, split*9) == 'c9b}') {
+              if (checkpass.substring(split*3, split*4) == '{no_') {
+                if (checkpass.substring(split*5, split*6) == 'nts_') {
+                  if (checkpass.substring(split*2, split*3) == 'eCTF') {
+                    if (checkpass.substring(split*7, split*8) == '9b5b') {
+                      alert("Password Verified");
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    else {
+      alert("Incorrect password");
+    }
+    
+  }
+```
+
+|Num|Pass|
+|---|---|
+|0, 4|'Cogn'|
+|24, 28|'plz_'|
+|4, 8|'itiv'|
+|16, 20|'clie'|
+|32, 36|'c9b}'|
+|12, 16|'{no_'|
+|20, 24|'nts_'|
+|8, 12|'eCTF'|
+|28 32|'9b5b'|
+
+これを並べ替えると`CognitiveCTF{no_clients_plz_9b5bc9b}`となる。
+
+パスワードの欄に入れるとOKだった。検証してOK！
+
 ## logon（2022年9月11日）
 
 ### 問題
