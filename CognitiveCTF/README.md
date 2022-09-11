@@ -2,7 +2,84 @@
 
 CognitiveCTFを解いたときの記録を徒然していこうかなと思いました。
 
-## The Numbers
+## Insp3ct0r（2022年9月11日）
+
+### 問題
+
+> Kishor Balanは、次のコードは検証が必要になるかもしれないとこっそり教えてくれました。: https://shell1.production.cognitivectf.com/problem/15589/ (link) or http://shell1.production.cognitivectf.com:15589
+
+### アプローチ
+
+サイト開く。
+Devツールのコンソールには何も表示されてなかった。
+
+`index.html`の中にこれがあった。
+
+```html
+</p>
+	<!-- Html is neat. Anyways have 1/3 of the flag: CognitiveCTF{tru3 -->
+      </div>
+```
+
+Howのところにこのように書いてあった。これがヒントだったと気が付く。
+
+> I used these to make this site:
+HTML
+CSS
+JS (JavaScript)
+
+同じく`myjs.js`を見てみたら、またフラグがあった。
+
+```js
+/* Javascript sure is neat. Anyways part 3/3 of the flag: t_lucky?b009d771} */
+```
+
+最後に`myscc.css`を見た。
+
+```css
+/* You need CSS to make pretty pages. Here's part 2/3 of the flag: _d3t3ct1ve_0r_ju5 */
+```
+
+これで3つ集まった。
+
+`CognitiveCTF{tru3_d3t3ct1ve_0r_ju5t_lucky?b009d771}`でフラグを検証する。
+
+## Glory of the Garden（2022年9月11日）
+
+### 問題
+
+> この庭園には見た目以上のものが含まれています。
+このファイルはshell1.production.cognitivectf.comの以下ディレクトリにも置かれています。
+/problems/glory-of-the-garden_0_a0f972e9b4d12e22fba5d6d1fedeb045
+
+### アプローチ
+
+```shell
+AyatoShitomi@picoCTF_production_shell_001:~$ cd /problems/glory-of-the-garden_0_a0f972e9b4d12e22fba5d6d1fedeb045
+AyatoShitomi@picoCTF_production_shell_001:/problems/glory-of-the-garden_0_a0f972e9b4d12e22fba5d6d1fedeb045$ ls
+garden.jpg
+AyatoShitomi@picoCTF_production_shell_001:/problems/glory-of-the-garden_0_a0f972e9b4d12e22fba5d6d1fedeb045$ 
+```
+
+JPEGの写真があった。
+なんだろうと思って、ファイルをダウンロードする。
+普通の写真だったから、ファイルの中に何か入っていると思った。
+
+```
+AyatoShitomi@picoCTF_production_shell_001:/problems/glory-of-the-garden_0_a0f972e9b4d12e22fba5d6d1fedeb045$ strings garden.jpg
+
+...
+
+mjx/
+s\]|."Ue
+\qZf
+Here is a flag "CognitiveCTF{more_than_m33ts_the_3y3_392ff9d1}"
+```
+
+Stringsコマンドでフラグでてきた。
+回答したら正解だった。
+
+## The Numbers（2022年9月11日）
 
 ### 問題
 > 数字は...何の意味があるの？
