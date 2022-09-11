@@ -22,3 +22,4 @@ https://west-sec.connpass.com/
 
 ### オンラインで常設してある
 https://web.cognitivectf.com/
+https://ctf.cpaw.site/index.php
