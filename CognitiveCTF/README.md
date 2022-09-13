@@ -4,7 +4,7 @@ CognitiveCTFを解いたときの記録を徒然していこうかなと思い�
 フラグ形式`CognitiveCTF{}`で、大文字小文字区別なし。
 
 |Date|Provlem|Type|Status|
-|---|---|---|---|---|
+|---|---|---|---|
 |2022年9月12日|vault-door-1[vault-door-1.md]|Reverse Engineering|Done|
 |2022年9月12日|rsa-pop-quiz[rsa-pop-quiz.md]|Cryptography|Not yet|
 |2022年9月12日|Tapping[Tapping.md]|Cryptography|Done|
