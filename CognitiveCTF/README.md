@@ -5,9 +5,9 @@ CognitiveCTFを解いたときの記録を徒然していこうかなと思い�
 
 |Date|Provlem|Type|Status|
 |---|---|---|---|
-|2022年9月12日|vault-door-1[./vault-door-1.md]|Reverse Engineering|Done|
-|2022年9月12日|rsa-pop-quiz[./rsa-pop-quiz.md]|Cryptography|Not yet|
-|2022年9月12日|Tapping[./Tapping.md]|Cryptography|Done|
+|2022年9月12日|[vault-door-1](./vault-door-1.md)|Reverse Engineering|Done|
+|2022年9月12日|[rsa-pop-quiz](./rsa-pop-quiz.md)|Cryptography|Not yet|
+|2022年9月12日|[Tapping](./Tapping.md)|Cryptography|Done|
 
 
 ## plumbing（2022年9月12日）
