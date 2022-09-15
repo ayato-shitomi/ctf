@@ -1,5 +1,7 @@
 # CognitiveCTF
 
+https://web.cognitivectf.com/
+
 CognitiveCTFを解いたときの記録を徒然していこうかなと思いました。
 フラグ形式`CognitiveCTF{}`で、大文字小文字区別なし。
 
