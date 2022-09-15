@@ -7,6 +7,7 @@ CognitiveCTFを解いたときの記録を徒然していこうかなと思い�
 
 |Date|Provlem|Type|Status|
 |---|---|---|---|
+|2022年9月15日|[where are the robots](./wherearetherobots.md)||Done|
 |2022年9月15日|[like1000](./like1000.md)|Forensics|Done|
 |2022年9月15日|[where-is-the-file](./where-is-the-file.md)|General Skills|Done|
 |...|...|...|...|
