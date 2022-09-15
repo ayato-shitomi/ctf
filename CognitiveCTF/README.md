@@ -5,12 +5,15 @@ CognitiveCTFを解いたときの記録を徒然していこうかなと思い�
 
 |Date|Provlem|Type|Status|
 |---|---|---|---|
+|2022年9月15日|[where-is-the-file](./where-is-the-file.md)|General Skills|
+|...|...|...|...|
 |2022年9月12日|[vault-door-1](./vault-door-1.md)|Reverse Engineering|Done|
 |2022年9月12日|[rsa-pop-quiz](./rsa-pop-quiz.md)|Cryptography|Not yet|
 |2022年9月12日|[Tapping](./Tapping.md)|Cryptography|Done|
 |2022年9月12日|[plumbing](./plumbing.md)|General Skills|Done|
 |2022年9月12日|[dont-use-client-side](./dont-use-client-side.md)|Web Exploitation|Done|
 |2022年9月11日|[logon](./logon.md)|Web Exploitation|Done|
+
 
 ## whats-the-difference（2022年9月11日）未解決
 
