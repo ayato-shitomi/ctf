@@ -25,3 +25,5 @@ https://west-sec.connpass.com/
 https://web.cognitivectf.com/
 
 https://ctf.cpaw.site/index.php
+
+https://picoctf.org/
