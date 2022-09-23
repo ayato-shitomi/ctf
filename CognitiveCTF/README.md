@@ -7,7 +7,7 @@ CognitiveCTFを解いたときの記録を徒然していこうかなと思い�
 
 |Date|Provlem|Type|Status|
 |---|---|---|---|
-||[pastaAAA](./pastaAAA.md)|Forensics|Done|
+||[pastaAAA](./pastaAAA.md)|Forensics||
 |2022年9月24日|[asm1](./asm1.md)|Reverse Engineering|Done|
 |2022年9月24日|[Irish-Name-Repo 1](./Irish-Name-Repo1.md)|Web Exploitation|Done|
 |2022年9月15日|[where are the robots](./wherearetherobots.md)|Web Exploitation|Done|
