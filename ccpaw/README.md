@@ -1,5 +1,92 @@
 # Lv2
 
+## [Reversing]reversing easy!
+
+
+
+## [Crypto]Block Cipher
+
+コードを見る、第一引数に与えられたやつをして、２番目に数値を入れればいい。
+
+コンパイルする
+
+引数に１から順に与えると、`4`でいい感じの文字列が出たからそれにする
+
+```shell
+ayato@ubuntuVM ~/Downloads ❯
+ 🐟 $ ./a.out ruoYced_ehpigniriks_i_llrg_stae 4
+cpaw{Your_deciphering_skill_is_great}
+```
+
+## [Misc]Image!
+
+OpenDocumentフォーマットと分かったかが、Wordが必須のよう
+
+https://scrapbox.io/kayuminbou/Q19.%5BMisc%5DImage!
+
+ここから答えをもらった。
+
+## [Forensic]leaf in forest
+
+```shell
+ayato@ubuntuVM ~/Downloads ❯
+ 🐟 $ sed -e "s/lovelive!//g" misc100 
+�ò���e!CCCelive!lovelivPPPovelive!loveAAAe!lovWWWve!{{{elive!loveliMMMelive!lovelGGG!lovelivRRRovelive!lEEElive!PPPelive!}}}⏎  
+```
+
+`cpawmgrep`
+
+## [Recon]Who am I ?
+
+`porisuteru スペシャルフォース`でぐぐる
+
+Googleは優秀なんよ
+
+https://twitter.com/porisuteru/status/653565663592607744/photo/1
+
+
+## [Network+Forensic]HTTP Traffic
+
+オブジェクトとしてエクスポートかける
+
+jsは`js/`の下にCSSは`css/`に入れる
+
+`...(1)`のファイルをHtmlにして開く
+
+## [Web] Redirect
+
+```shell
+ayato@ubuntuVM ~/Downloads ❯
+ 🐟 $ curl -s -I -L http://q15.ctf.cpaw.site
+HTTP/1.1 302 Found
+Server: nginx
+Date: Tue, 25 Oct 2022 13:29:22 GMT
+Content-Type: text/html; charset=UTF-8
+Connection: keep-alive
+X-Flag: cpaw{4re_y0u_1ook1ng_http_h3ader?}
+Location: http://q9.ctf.cpaw.site
+
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 25 Oct 2022 13:29:22 GMT
+Content-Type: text/html
+Content-Length: 7344
+Connection: keep-alive
+Last-Modified: Fri, 01 Sep 2017 11:55:24 GMT
+ETag: "1cb0-5581f6fa70300"
+Accept-Ranges: bytes
+```
+
+## [Stego]隠されたフラグ
+
+モールス信号
+https://morse.ariafloat.com/en/
+
+`-.-. .--. .- .-- .... .. -.. -.. . -. ..--.--- . ... ... .- --. . ---... -.--.-`
+
+`CPAWHIDDEN`
+`MESSAGE:)`
+
 # Lv1
 
 ## [PPC]並べ替えろ!
